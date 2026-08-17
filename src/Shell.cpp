@@ -1,9 +1,4 @@
-//
-// Created by kostia on 11.12.25.
-//
-
 #include "Shell.h"
-
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -16,7 +11,6 @@
 
 using std::string, std::vector, std::optional;
 namespace fs = std::filesystem;
-
 
 std::ostream &operator<<(std::ostream &stream, const ParsedLine &parsed_line) {
     stream << "command: " << parsed_line.command << '\n';
@@ -52,7 +46,6 @@ optional<fs::path> Shell::check_path(const string &command_name) {
 
     return {};
 }
-
 vector<string> Shell::get_path_executables() {
     string path_env(getenv("PATH"));
     std::stringstream path_ss{path_env};
